@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const users = [
   { id: "a", name: "Robin" },
   { id: "b", name: "Dennis" },
+  { id: "c", name: "Charlie" },
+  { id: "d", name: "Dominic" },
 ];
 
 function Memoize() {
-
   const [text, setText] = React.useState("");
   const [search, setSearch] = React.useState("");
 
@@ -40,13 +41,13 @@ function Memoize() {
   return (
     <div>
       <input type="text" value={text} onChange={handleText} />
-        <button type="button" onClick={handleSearch}>
-          Search
-        </button>
+      <button type="button" onClick={handleSearch}>
+        Search
+      </button>
 
-        <List list={filteredUsers} />
+      <List list={filteredUsers} />
     </div>
-  )
+  );
 }
 
 const List = ({ list }) => {
@@ -63,4 +64,4 @@ const ListItem = ({ item }) => {
   return <li>{item.name}</li>;
 };
 
-export default Memoize
+export default Memoize;
